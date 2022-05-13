@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000000;
+}
+
+.card {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  transition: border 0.2s ease-in-out;
+  /* padding: 50px; */
+}
+
+.card:hover {
+  border: 4px solid #ffffff;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 95%;
+  margin: 50px auto;
+  padding: 20px;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  /* Make columns the same width */
+  grid-auto-columns: 1fr;
+  /* Setting up template areas for mobile */
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six"
+    "seven";
+}
+
+/* Assign grid childs to areas once for the cards */
+.card:nth-child(1) {
+  grid-area: one;
+  background-image: url("https://cdn.player.one/sites/player.one/files/2022/05/13/p1gtafreemode2");
+}
+
+.card:nth-child(2) {
+  grid-area: two;
+}
+
+.card:nth-child(3) {
+  grid-area: three;
+}
+
+.card:nth-child(4) {
+  grid-area: four;
+}
+
+.card:nth-child(5) {
+  grid-area: five;
+}
+
+.card:nth-child(6) {
+  grid-area: six;
+}
+
+.card:nth-child(7) {
+  grid-area: seven;
+}
+
+/* By default the grid areas stack */
+
+/* Above tablet size, have this grid template */
+
+@media (min-width: 1000px) {
+  .container {
+    grid-template-areas:
+      "one one two"
+      "one one three"
+      "four five six"
+      "four five seven";
+  }
+}
